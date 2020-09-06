@@ -1,6 +1,0 @@
-__pycache__/
-    *.pyc
-    .idea
-
-    db.sqlite3
-    <nome do projeto>.settings.py
