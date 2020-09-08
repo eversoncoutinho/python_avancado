@@ -1,0 +1,24 @@
+- Crie import a import 
+    from django.http import HttResponse
+------------------------------------------------------------------
+
+- Crie uma função em views.py
+
+def home(request):
+#toda lógica da view    
+    return HttResponse("Olá mundo") (nem sempre é usado o Htt Response)
+
+--------------------------------------------------------------------
+
+- Crie uma arquivo chamado urls.py
+
+from django.urls import path
+from .views import <nomedafunção>>
+em urlpatterns
+
+path('URL', <nomedafunção>, nome='<nomequevcquiser>')
+
+- vá na url pai:
+from django.url import include
+path('URL',include('nomedoapp.urls')),
+
