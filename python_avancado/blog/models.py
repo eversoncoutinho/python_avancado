@@ -12,4 +12,7 @@ class Anuncio (models.Model):
     preco= models.DecimalField(("Preço"), max_digits=999, decimal_places=2)
     categoria= models.ForeignKey(Categoria, related_name='categoria', on_delete=models.CASCADE)
     data_da_criacao=models.DateField(("Data"), auto_now=False, auto_now_add=False)
+
+    def __str__(self):
+        return self.titulo
     
