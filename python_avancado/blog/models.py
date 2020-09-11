@@ -5,6 +5,10 @@ class Categoria (models.Model):
         
     def __str__(self):
         return self.titulo
+    
+    class Meta:
+        ordering = ['titulo']#serve para ordenar em ordem crescente
+                            # em ordem decrescente ['-titulo']
 
 class Anuncio (models.Model):
     titulo=models.CharField(max_length=20, blank=True, null=True)

@@ -1,0 +1,16 @@
+- Vá em views e importe os models do app
+from nomedoapp import models
+- crie uma comando dentro da função que representa a página
+-na função use o método .objects (veja a documentação no django) 
+-no render envie como último parametro um dicionário do que vc quer enviar
+   {'nomequalquer':parâmetro da função}    
+   o nome que estiver entre ' ' será a variável
+   que o template irá receber 
+- use {{       }}      
+- para usar os comandos de programação
+ex.:
+{% for %}           
+
+    {{itens}}
+
+{% endfor %}

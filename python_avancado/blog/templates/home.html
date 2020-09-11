@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +10,84 @@
     <title>Caprice é linda</title>
 </head>
 <body>
-    <div class="ui container"> <!-- o conteiner é uma caixa onde ficam as divs de colunas-->
+
+  {{anuncio}}
+<div class="ui container"> <!--Menu-->
+    <div class="ui menu">
+        <a class="item">Browse</a>
+        <a class="item">Submit</a>
+        <div class="right menu">
+          <a class="item">Sign Up</a>
+          <a class="item">
+            <img class="ui avatar image" src="/images/wireframe/square-image.png">
+            <span>Username</span>
+          </a>
+        </div>
+      </div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui  stackable container"> <!-- o conteiner é uma caixa onde ficam as divs de colunas-->
         <!-- grid: O somatório de de wide tem que totalizar 16 -->
         <div class="ui grid"> 
           
-            <div class="ui stackable three wide column">
-                <p>Menu com colunas</p>
+            <div class="ui stackable two wide column"> <!--Menu flutuante-->
+                <div class="ui vertical menu">
+                    
+                    <a class="active teal item">
+                      Inbox
+                    </a>
+                    {% for categoria in categoria %}
+                    <a class="item">
+                      {{categoria}}
+                    
+                    </a>
+                    {% endfor %}
+
+                  </div>
             </div>
             
-            <div class="ui stackable ten wide column">
-                <p>2</p> 
+            <div class="ui stackable twelve wide column"><!-- coluna do meio-->
+              <div class="ui stackable six wide column">
+              {% for anuncio in anuncio %}
+              
+              <div class="ui link cards">
+                 <div class="card">
+                    <div class="image">
+                          <img src ="{% static 'blog/img/img1.jpg' %}">
+                    </div>
+              
+                    <div class="content">
+                        <div class="header">{{anuncio.titulo}}</div>
+                            <div class="meta">
+                                  <a>R$: {{anuncio.preco}}</a>
+                            </div>
+                          <div class="description">{{anuncio.descricao}}</div>
+                    </div>
+                                  
+                 </div>
+              </div>
+            
+              {% endfor %}
+              </div>
             </div>
-            <div class="ui stackable three wide column">
-            coluna 3
+                 
+            <div class="ui stackable two wide column">
+                <div class="ui card">
+                    <a class="image" href="#">
+                        <img src ="{% static 'blog/img/img1.png' %}">
+                    </a>
+                    <div class="content">
+                      <a class="header" href="#">Steve Jobes</a>
+                      <div class="meta">
+                        <a>Last Seen 2 days ago</a>
+                      </div>
+                    </div>
+                  </div>
             </div>
-        </div>
-    </div>
+
+       </div>
+</div>
+
+    
 </body>
 </html>
